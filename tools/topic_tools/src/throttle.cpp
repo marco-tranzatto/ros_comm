@@ -191,6 +191,8 @@ int main(int argc, char **argv)
   if (unreliable)
     g_th.unreliable().reliable(); // Prefers unreliable, but will accept reliable.
 
+  g_th.tcpNoDelay();
+
   if(!strcmp(argv[1], "messages"))
     g_use_messages = true;
   else if(!strcmp(argv[1], "bytes"))
